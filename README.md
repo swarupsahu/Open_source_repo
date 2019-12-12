@@ -1,2 +1,13 @@
-# Open_source_repo
-Open source repository to make prior coding projects / assignments visible to individuals. Enjoy! 
+# Predator Prey Simulation
+
+**Your Name**
+ - swarupsahu@gwu.edu
+ - swarupsahu
+
+The Predator Prey simulation is built using Java and uses GUI components to draw and populate the simulation. There are two main packages: util and predator_prey_sim. util holds all the auxiliary functions that are used either to draw the board (via DotPanel.java) or helper functions (via Helper.java). predator_prey_sim houses the main code to create the objects. The class World.java has all the static variables that are used to populate the predator and prey objects (predator.java and prey.java respectively). In this class, there are methods to populate(), draw(), and update() the simulation. PPSim.java extends a JFrame, this is the main board that we draw all the objects onto (World.java keeps all the different predator / prey objects organized and tracks their positions, which are then drawn onto the PPSim frame. 
+
+Animal.java is an abstract class and both Predator.java and Prey.java extend from it. Each animal can reproduce and can move. However, the criteria for predators seeing prey, in addition to their death, are different. This is why these are separate methods within the individual subclass rather than a part of the abstract class. The main movement is dictated by whether a prey can use horizontally or vertically in the 10 pixels if a predator exists. If it sees a predator, the prey runs two steps in the opposite direction until the predator is out of its sight. Similarly if a predator sees a prey within 15 pixels (horizontally and vertically), then the predator chases the prey. 
+
+The new feature that I added in this project is the concept of hunger for the predators. If they don’t eat a prey within a certain time, they will die. However if they successfully eat 5 prey, then they will reproduce another predator. This dynamic can be viewed when you start with 10 prey and 5 predators. Eventually, the prey outpace the predators in terms of reproduction rate, but eventually, by eating more prey, the predators can create more predators and will wipe out the visible population (this does not apply to camouflaged prey). Once all the visible prey are eaten, the predators will rapidly die of hunger. This feature showcases how quickly a population can exponentially get bigger until it is eliminated by predators. 
+
+Another new feature that I added was a GUI toolkit at the top of the simulation. The user can track how many predators / prey are on the screen, track the running time of the simulation, change the background color to camouflage prey (by pressing space), and reset the simulation (by pressing enter). Furthermore, I have included buttons to help the user increase / decrease the speed of the simulation and increase / decrease the birth rate of predators / prey. Finally, the user can add a prey if they left click the mouse and add a predator if they right click the mouse.
